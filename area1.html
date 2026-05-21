@@ -155,20 +155,6 @@
         font-weight:700;
     }
 
-    .status-badge{
-
-        background:rgba(0,128,0,0.1);
-
-        color:green;
-
-        padding:12px 20px;
-
-        border-radius:999px;
-
-        font-size:0.92rem;
-
-        font-weight:600;
-    }
 
     .hero-description{
 
@@ -216,129 +202,7 @@
         border-radius:999px;
     }
 
-    /* =========================================
-    OVERVIEW SECTION
-    ========================================= */
 
-    .content-section{
-
-        margin-top:20px;
-
-        margin-bottom:45px;
-    }
-
-    .content-grid{
-
-        display:grid;
-
-        grid-template-columns:
-            repeat(auto-fit, minmax(280px, 1fr));
-
-        gap:25px;
-    }
-
-    .info-card{
-
-        background:rgba(255,255,255,0.85);
-
-        border-radius:24px;
-
-        padding:35px;
-
-        box-shadow:0 10px 30px rgba(0,0,0,0.05);
-
-        transition:var(--transition);
-
-        position:relative;
-
-        overflow:hidden;
-    }
-
-    .info-card::before{
-
-        content:"";
-
-        position:absolute;
-
-        top:-60px;
-        right:-60px;
-
-        width:150px;
-        height:150px;
-
-        background:
-            radial-gradient(
-                circle,
-                rgba(255,215,0,0.12),
-                transparent 70%
-            );
-    }
-
-    .info-card:hover{
-
-        transform:translateY(-8px);
-
-        box-shadow:0 18px 35px rgba(0,0,0,0.08);
-    }
-
-    .card-icon{
-
-        width:58px;
-        height:58px;
-
-        border-radius:18px;
-
-        background:
-            linear-gradient(
-                135deg,
-                var(--pup-maroon),
-                var(--pup-maroon-dark)
-            );
-
-        color:var(--white);
-
-        display:flex;
-
-        align-items:center;
-
-        justify-content:center;
-
-        font-weight:700;
-
-        margin-bottom:18px;
-
-        position:relative;
-
-        z-index:2;
-    }
-
-    .info-card h4{
-
-        color:var(--pup-maroon);
-
-        margin-bottom:12px;
-
-        font-size:1.08rem;
-
-        position:relative;
-
-        z-index:2;
-    }
-
-    .info-card p{
-
-        color:var(--text-muted);
-
-        font-size:0.95rem;
-
-        line-height:1.8;
-
-        text-align:justify;
-
-        position:relative;
-
-        z-index:2;
-    }
 
     /* =========================================
     DOCUMENT SECTION
@@ -671,10 +535,6 @@
 
                 </div>
 
-                <div class="status-badge">
-                    Compliant
-                </div>
-
             </div>
 
             <p class="hero-description">
@@ -683,74 +543,6 @@
                 AACCUP accreditation standards for the
                 BSBA-MM program.
             </p>
-
-        </section>
-
-        <!-- OVERVIEW SECTION -->
-        <section class="content-section">
-
-            <div class="section-title">
-
-                <h3>Program Overview</h3>
-
-                <div class="title-line"></div>
-
-            </div>
-
-            <div class="content-grid">
-
-                <!-- CARD -->
-                <div class="info-card">
-
-                    <div class="card-icon">
-                        01
-                    </div>
-
-                    <h4>Institutional Vision</h4>
-
-                    <p>
-                        The Polytechnic University of the Philippines
-                        envisions becoming a leading comprehensive
-                        polytechnic university in Asia.
-                    </p>
-
-                </div>
-
-                <!-- CARD -->
-                <div class="info-card">
-
-                    <div class="card-icon">
-                        02
-                    </div>
-
-                    <h4>Institutional Mission</h4>
-
-                    <p>
-                        PUP commits to provide quality education,
-                        research, extension, and production services
-                        for national development.
-                    </p>
-
-                </div>
-
-                <!-- CARD -->
-                <div class="info-card">
-
-                    <div class="card-icon">
-                        03
-                    </div>
-
-                    <h4>Program Objectives</h4>
-
-                    <p>
-                        The BSBA-MM program develops competent,
-                        innovative, and socially responsible
-                        marketing professionals.
-                    </p>
-
-                </div>
-
-            </div>
 
         </section>
 
