@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSBA-MM Level III Accreditation | PUP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="header.css">
+    <style>
+        /* =========================================
+   CONTAINER
+========================================= */
+.container{
+    width: 100%;
+    max-width: var(--container-width);
+    margin: auto;
+    padding: 80px 20px;
+    position: relative;
+}
+
+/* =========================================
+   ADVISER BANNER
+========================================= */
+.adviser-banner{
+    width: 100%;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 35px 40px;
+    margin-bottom: 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    box-shadow: var(--shadow-md);
+
+    border: 1px solid rgba(0,0,0,0.05);
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* Top Accent */
+.adviser-banner::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 6px;
+
+    background: var(--gradient-gold);
+}
+
+/* =========================================
+   FACULTY SECTION
+========================================= */
+#faculty{
+    position: relative;
+}
+
+/* =========================================
+   HEADER + SEARCH
+========================================= */
+.faculty-controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    margin-bottom: 45px;
+    flex-wrap: wrap;
+}
+
+.faculty-controls h2{
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 800;
+    color: var(--pup-maroon);
+    letter-spacing: -1px;
+}
+
+#facultySearch{
+    width: 320px;
+    max-width: 100%;
+
+    padding: 14px 20px;
+
+    border-radius: var(--radius-pill);
+
+    border: 2px solid transparent;
+
+    background: var(--white);
+
+    box-shadow: var(--shadow-sm);
+
+    outline: none;
+
+    transition: var(--transition-smooth);
+
+    font-size: 0.95rem;
+}
+
+#facultySearch:focus{
+    border-color: var(--pup-gold);
+    box-shadow: 0 0 0 5px var(--gold-glow);
+}
+
+/* =========================================
+   FACULTY GRID
+========================================= */
+.faculty-grid{
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(260px, 1fr));
+
+    gap: 30px;
+}
+
+/* =========================================
+   FACULTY CARD
+========================================= */
+.faculty-card{
+    position: relative;
+
+    background: rgba(255,255,255,0.85);
+
+    backdrop-filter: var(--blur-sm);
+
+    border-radius: var(--radius-lg);
+
+    padding: 30px 25px;
+
+    text-decoration: none;
+    color: inherit;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    box-shadow: var(--shadow-sm);
+
+    transition: var(--transition-slow);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    isolation: isolate;
+}
+
+/* Glow Background */
+.faculty-card::before{
+    content: "";
+
+    position: absolute;
+
+    width: 200px;
+    height: 200px;
+
+    background: var(--maroon-glow);
+
+    border-radius: 50%;
+
+    top: -80px;
+    right: -80px;
+
+    filter: blur(60px);
+
+    z-index: -1;
+
+    opacity: 0;
+
+    transition: var(--transition-slow);
+}
+
+/* Gold Line */
+.faculty-card::after{
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background: var(--gradient-gold);
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition: var(--transition-smooth);
+}
+
+/* Hover */
+.faculty-card:hover{
+    transform: translateY(-12px);
+
+    box-shadow: var(--shadow-lg);
+
+    border-color: rgba(255, 215, 0, 0.2);
+}
+
+.faculty-card:hover::before{
+    opacity: 1;
+}
+
+.faculty-card:hover::after{
+    transform: scaleX(1);
+}
+
+/* =========================================
+   FACULTY IMAGE
+========================================= */
+.faculty-img{
+    width: 140px;
+    height: 140px;
+
+    border-radius: 50%;
+
+    padding: 5px;
+
+    background: var(--gradient-maroon);
+
+    margin-bottom: 22px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 0 5px rgba(255,255,255,0.7),
+        0 10px 30px rgba(128,0,0,0.25);
+
+    transition: var(--transition-smooth);
+}
+
+.faculty-card:hover .faculty-img{
+    transform: scale(1.06);
+}
+
+.faculty-img img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    display: block;
+}
+
+/* =========================================
+   TEXT
+========================================= */
+.faculty-name{
+    font-size: 1.3rem;
+    font-weight: 800;
+
+    color: var(--pup-maroon);
+
+    margin-bottom: 6px;
+
+    line-height: 1.3;
+}
+
+.faculty-card p{
+    color: var(--text-muted);
+
+    font-size: 0.95rem;
+
+    line-height: 1.5;
+}
+
+.faculty-campus{
+    margin-top: 10px;
+
+    color: var(--pup-maroon) !important;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    font-size: 0.82rem !important;
+
+    text-transform: uppercase;
+}
+
+/* =========================================
+   SCROLL REVEAL ANIMATION
+========================================= */
+.faculty-card{
+    animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 768px){
+
+    .container{
+        padding: 60px 16px;
+    }
+
+    .adviser-banner{
+        flex-direction: column;
+        text-align: center;
+        padding: 28px;
+    }
+
+    .faculty-controls{
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #facultySearch{
+        width: 100%;
+    }
+
+    .faculty-grid{
+        gap: 22px;
+    }
+
+    .faculty-card{
+        padding: 25px 20px;
+    }
+
+    .faculty-img{
+        width: 120px;
+        height: 120px;
+    }
+
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Branding & Header -->
+    <header>
+        <div class="logo-container">
+            <img src="/all pictures/logo.png" alt="PUP Logo">
+        </div>
+        <div class="logo-container">
+            <img src="/all pictures/bsbaj.png" alt="PUP Logo">
+        </div>
+        <div class="header-text">
+            <h1>BS Business Administration major in Marketing Management</h1>
+            <p>Level III - Accreditation | LOPEZ CAMPUS</p>
+        </div>
+    </header>
+
+    <nav>
+        <!-- Hamburger Menu Button -->
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+
+            <li><a href="index.html">Home</a></li>
+
+            <!-- Dropdown 1 -->
+            <li class="dropdown">
+
+                <button class="dropbtn">
+                    Area
+                    <span class="arrow">▼</span>
+                </button>
+
+                <div class="dropdown-content">
+                    <a href="area1.html">Area 1</a>
+                    <a href="area2.html">Area 2</a>
+                    <a href="area3.html">Area 3</a>
+                    <a href="area4.html">Area 4</a>
+                    <a href="area5.html">Area 5</a>
+                    <a href="area6.html">Area 6</a>
+                    <a href="area7.html">Area 7</a>
+                    <a href="area8.html">Area 8</a>
+                    <a href="area9.html">Area 9</a>
+                    <a href="area10.html">Area 10</a>
+                </div>
+
+            </li>
+
+            <li><a href="faculty.html" class="active">Faculty</a></li>
+
+            <!-- Dropdown 2 -->
+            <li class="dropdown">
+
+                <button class="dropbtn">
+                    JME
+                    <span class="arrow">▼</span>
+                </button>
+
+                <div class="dropdown-content">
+                    <a href="documentation.html">Activities and Participation</a>
+                    <a href="outreach.html">Extension Program</a>
+                    <a href="documentation.html">Outreach Program</a>
+                    <a href="outreach.html">Organizational Officer</a>
+                </div>
+
+            </li>
+
+        </ul>
+    </nav>
+
+    <div class="container">
+
+    <!-- Adviser Section -->
+    <section class="adviser-banner">
+        <div>
+            <h2 style="color: var(--pup-maroon);">Program Adviser</h2>
+            <p style="font-size: 1.2rem;">Ms. Sarah G. Tabien, MBA</p>
+        </div>
+        <div style="font-style: italic; color: #777;">
+            Accreditation Lead
+        </div>
+    </section>
+
+    <!-- Faculty Directory -->
+    <section id="faculty">
+
+        <div class="faculty-controls">
+            <h2 style="border-bottom: 3px solid var(--pup-gold); padding-bottom: 5px;">
+                Faculty Directory
+            </h2>
+
+            <input 
+                type="text" 
+                id="facultySearch" 
+                placeholder="Search faculty member..."
+            >
+        </div>
+
+        <div class="faculty-grid" id="facultyGrid">
+
+            <!-- 1 -->
+            <a href="faculty1.html" class="faculty-card">
+                <div class="faculty-img">
+                    <img src="/all pictures/sarah.png"
+                        alt="Sarah Tabien"
+                        onerror="this.src='https://ui-avatars.com/api/?name=Sarah+Tabien&background=800000&color=fff'">
+                </div>
+
+                <h3 class="faculty-name">Sarah Tabien</h3>
+                <p>Faculty Member, BSBA-MM</p>
+                <p class="faculty-campus">PUP Lopez</p>
+            </a>
+
+            <!-- 2 -->
+            <a href="faculty2.html" class="faculty-card">
+                <div class="faculty-img">
+                    <img src="/all pictures/logo.png"
+                        alt="Jayson Jucon"
+                        onerror="this.src='https://ui-avatars.com/api/?name=Jayson+Jucon&background=800000&color=fff'">
+                </div>
+
+                <h3 class="faculty-name">Jayson Jucon</h3>
+                <p>Faculty Member, BSBA-MM</p>
+                <p class="faculty-campus">PUP Lopez</p>
+            </a>
+
+            <!-- 3 -->
+            <a href="faculty3.html" class="faculty-card">
+                <div class="faculty-img">
+                    <img src="/all pictures/logo.png"
+                        alt="Sam Bulfa"
+                        onerror="this.src='https://ui-avatars.com/api/?name=Sam+Bulfa&background=800000&color=fff'">
+                </div>
+
+                <h3 class="faculty-name">Sam Bulfa</h3>
+                <p>Faculty Member, BSBA-MM</p>
+                <p class="faculty-campus">PUP Lopez</p>
+            </a>
+
+            <!-- 4 -->
+            <a href="faculty4.html" class="faculty-card">
+                <div class="faculty-img">
+                    <img src="/all pictures/veronica.png"
+                        alt="Veronica Almase"
+                        onerror="this.src='https://ui-avatars.com/api/?name=Veronica+Almase&background=800000&color=fff'">
+                </div>
+
+                <h3 class="faculty-name">Veronica Almase</h3>
+                <p>Faculty Member, BSBA-MM</p>
+                <p class="faculty-campus">PUP Lopez</p>
+            </a>
+
+            <!-- 5 -->
+            <a href="faculty5.html" class="faculty-card">
+                <div class="faculty-img">
+                    <img src="/all pictures/logo.png"
+                        alt="Altagracia Silaya"
+                        onerror="this.src='https://ui-avatars.com/api/?name=Altagracia+Silaya&background=800000&color=fff'">
+                </div>
+
+                <h3 class="faculty-name">Altagracia Silaya</h3>
+                <p>Faculty Member, BSBA-MM</p>
+                <p class="faculty-campus">PUP Lopez</p>
+            </a>
+
+            <!-- 6 -->
+            <a href="faculty6.html" class="faculty-card">
+                <div class="faculty-img">
+                    <img src="/all pictures/diony.png"
+                        alt="Diony Velasquez"
+                        onerror="this.src='https://ui-avatars.com/api/?name=Diony+Velasquez&background=800000&color=fff'">
+                </div>
+
+                <h3 class="faculty-name">Diony Velasquez</h3>
+                <p>Faculty Member, BSBA-MM</p>
+                <p class="faculty-campus">PUP Lopez</p>
+            </a>
+
+            <!-- 7 -->
+            <a href="faculty7.html" class="faculty-card">
+                <div class="faculty-img">
+                    <img src="/all pictures/logo.png"
+                        alt="Roxanne Lapiseras"
+                        onerror="this.src='https://ui-avatars.com/api/?name=Roxanne+Lapiseras&background=800000&color=fff'">
+                </div>
+
+                <h3 class="faculty-name">Roxanne Lapiseras</h3>
+                <p>Faculty Member, BSBA-MM</p>
+                <p class="faculty-campus">PUP Lopez</p>
+            </a>
+
+            <!-- 8 -->
+            <a href="faculty8.html" class="faculty-card">
+                <div class="faculty-img">
+                    <img src="/all pictures/hiroshi.png"
+                        alt="Hiroshi Sen Mera"
+                        onerror="this.src='https://ui-avatars.com/api/?name=Hiro+Sen+Mera&background=800000&color=fff'">
+                </div>
+
+                <h3 class="faculty-name">Hiroshi Sen Mera</h3>
+                <p>Faculty Member, BSBA-MM</p>
+                <p class="faculty-campus">PUP Lopez</p>
+            </a>
+
+            <!-- Continue same structure for remaining faculty -->
+
+        </div>
+    </section>
+
+</div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About the Program</h3>
+                <p>The BSBA Marketing Management program at PUP Lopez is dedicated to developing world-class marketing professionals equipped with the skills and ethics to excel in the global industry.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#" style="color: white; text-decoration: none;">Academic Calendar</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none;">Student Handbook</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none;">PUP Official Website</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>📍 PUP Lopez Branch, Quezon Province</p>
+                <p>📧 lopez@pup.edu.ph</p>
+                <p>📞 (042) 302-7105</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Polytechnic University of the Philippines - Lopez Branch. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+    });
+
+    // MOBILE DROPDOWN
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    dropdowns.forEach(dropdown => {
+
+        const button = dropdown.querySelector('.dropbtn');
+
+        button.addEventListener('click', (e) => {
+
+            // ONLY MOBILE
+            if(window.innerWidth <= 992){
+
+                e.preventDefault();
+
+                dropdown.classList.toggle('mobile-open');
+
+            }
+
+        });
+
+    });
+       // Inside index.html, replace the loop with this:
+       const areaDropdown = document.getElementById('areaDropdown');
+       for (let i = 1; i <= 10; i++) {
+       const link = document.createElement('a');
+}
+
+        // 2. Search Logic for Static HTML
+        const searchInput = document.getElementById('facultySearch');
+        const cards = document.querySelectorAll('.faculty-card');
+
+        searchInput.addEventListener('input', (e) => {
+            const searchValue = e.target.value.toLowerCase();
+
+            cards.forEach(card => {
+                const facultyName = card.querySelector('.faculty-name').textContent.toLowerCase();
+                if (facultyName.includes(searchValue)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

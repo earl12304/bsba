@@ -1,0 +1,1181 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSBA-MM Level III Accreditation | PUP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="header.css">
+    <style>
+
+
+/* =========================================
+   SECTION
+========================================= */
+.adviser-section {
+    position: relative;
+    overflow: hidden;
+    padding: 7rem 0;
+}
+
+.adviser-container {
+    width: 100%;
+    max-width: var(--container-width);
+
+    margin: auto;
+
+    padding: 0 1.5rem;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 4rem;
+
+    align-items: center;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   BACKGROUND EFFECTS
+========================================= */
+.bg-orb {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: var(--blur-lg);
+
+    opacity: 0.18;
+
+    z-index: 0;
+}
+
+.orb-1 {
+    width: 320px;
+    height: 320px;
+
+    background: var(--pup-gold);
+
+    top: 0;
+    left: -120px;
+}
+
+.orb-2 {
+    width: 380px;
+    height: 380px;
+
+    background: var(--pup-maroon);
+
+    bottom: -100px;
+    right: -120px;
+}
+
+.orb-3 {
+    width: 300px;
+    height: 300px;
+
+    background: var(--pup-maroon);
+
+    top: 20%;
+    left: -100px;
+}
+
+.orb-4 {
+    width: 360px;
+    height: 360px;
+
+    background: var(--pup-gold);
+
+    bottom: -120px;
+    right: -100px;
+}
+
+.bg-grid {
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(rgba(128,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(128,0,0,0.03) 1px, transparent 1px);
+
+    background-size: 40px 40px;
+
+    z-index: 0;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+.adviser-content {
+    position: relative;
+    z-index: 2;
+}
+
+.section-badge {
+    display: inline-block;
+
+    padding: 0.7rem 1rem;
+
+    border-radius: var(--radius-pill);
+
+    background: rgba(255,215,0,0.12);
+
+    border: 1px solid rgba(255,215,0,0.25);
+
+    color: #d4a200;
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 1.5rem;
+}
+
+.section-title {
+
+    font-size: clamp(1.5rem,  4.3rem, 2.3rem);
+
+    font-weight: 800;
+
+    line-height: 1.12;
+
+    letter-spacing: -1.5px;
+
+    color: var(--pup-maroon);
+
+    margin-bottom: 1.8rem;
+
+    max-width: 700px;
+}
+
+.section-text {
+
+    font-size: 1.05rem;
+
+    line-height: 2;
+
+    color: var(--text-muted);
+
+    text-align: justify;
+
+    text-justify: inter-word;
+
+    max-width: 650px;
+
+    margin-bottom: 2.2rem;
+
+    font-weight: 400;
+}
+
+
+
+
+/* =========================================
+   PROFILE CARD
+========================================= */
+.profile-card {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    padding: 2.5rem;
+
+    border-radius: 32px;
+
+    background: rgba(255,255,255,0.88);
+
+    border: 1px solid rgba(128,0,0,0.08);
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.06),
+        0 2px 10px rgba(0,0,0,0.04);
+
+    overflow: hidden;
+
+    transition: 0.45s ease;
+
+    isolation: isolate;
+}
+
+
+/* Elegant top accent */
+.profile-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--pup-maroon),
+            var(--pup-gold)
+        );
+}
+
+/* Soft background texture */
+.profile-card::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255,215,0,0.06),
+            transparent 35%
+        );
+
+    z-index: -1;
+}
+
+.profile-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.10),
+        0 5px 20px rgba(128,0,0,0.08);
+}
+
+.profile-image-wrapper {
+    position: relative;
+
+    flex-shrink: 0;
+}
+
+/* Professional framed image */
+.profile-image {
+    width: 230px;
+    height: 280px;
+
+    object-fit: cover;
+
+    border-radius: 24px;
+
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.12);
+}
+
+/* Elegant layered frame */
+.profile-image-wrapper::before {
+    content: "";
+
+    position: absolute;
+
+    top: -12px;
+    left: -12px;
+
+    width: 100%;
+    height: 100%;
+
+    border: 2px solid rgba(128,0,0,0.15);
+
+    border-radius: 28px;
+
+    z-index: 1;
+}
+
+/* Gold accent edge */
+.profile-image-wrapper::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: -10px;
+    right: -10px;
+
+    width: 80px;
+    height: 80px;
+
+    border-right: 4px solid rgba(255,215,0,0.6);
+    border-bottom: 4px solid rgba(255,215,0,0.6);
+
+    border-radius: 0 0 24px 0;
+
+    z-index: 3;
+}
+
+.profile-card:hover .profile-image {
+    transform: scale(1.02);
+}
+
+/* =========================================
+   PROFILE CONTENT
+========================================= */
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info h3 {
+    font-size: 2rem;
+
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    color: var(--pup-maroon);
+
+    margin-bottom: 0.6rem;
+
+    letter-spacing: -0.8px;
+}
+
+.profile-position {
+    display: inline-block;
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    color: #8b5e3c;
+
+    margin-bottom: 1.4rem;
+}
+
+.profile-description {
+    font-size: 1rem;
+
+    line-height: 1.9;
+
+    color: var(--text-muted);
+
+    margin-bottom: 1.8rem;
+
+    text-align: justify;
+}
+
+
+/* =========================================
+   TAGS
+========================================= */
+
+.profile-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 0.8rem;
+}
+
+.profile-tag {
+    padding: 0.7rem 1rem;
+
+    border-radius: 999px;
+
+    background: rgba(128,0,0,0.05);
+
+    border: 1px solid rgba(128,0,0,0.08);
+
+    color: var(--pup-maroon);
+
+    font-size: 0.82rem;
+
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.profile-tag:hover {
+    background: var(--pup-maroon);
+
+    color: white;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 992px) {
+
+    .profile-card {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 2rem;
+    }
+
+    .profile-tags {
+        justify-content: center;
+    }
+
+    .profile-description {
+        text-align: center;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 240px;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .profile-card {
+        padding: 1.6rem;
+        border-radius: 24px;
+    }
+
+    .profile-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .profile-image {
+        width: 180px;
+        height: 220px;
+    }
+}
+
+
+/* =========================================
+   REVERSE LAYOUT
+========================================= */
+.reverse-layout {
+    direction: rtl;
+}
+
+.reverse-layout > * {
+    direction: ltr;
+}
+
+
+/* =========================================
+   SCROLL ANIMATION
+========================================= */
+.fade-up {
+    opacity: 0;
+
+    transform: translateY(70px);
+
+    transition: 1s ease;
+}
+
+.fade-up.active {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.delay-1 {
+    transition-delay: 0.25s;
+}
+
+/* LEFT / RIGHT REVEAL */
+.reveal-left,
+.reveal-right {
+    opacity: 0;
+
+    transition: all 1s ease;
+}
+
+.reveal-left {
+    transform: translateX(-80px);
+}
+
+.reveal-right {
+    transform: translateX(80px);
+}
+
+.reveal-active {
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 992px) {
+
+    .adviser-container {
+        grid-template-columns: 1fr;
+    }
+
+    .reverse-layout {
+        direction: ltr;
+    }
+
+    .text-right {
+        text-align: left;
+    }
+
+    .right-actions {
+        justify-content: flex-start !important;
+    }
+
+    .section-text {
+        max-width: 100%;
+    }
+
+    .profile-card {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .profile-image {
+        width: 160px;
+        height: 160px;
+    }
+
+    .section-title {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .adviser-section {
+        padding: 5rem 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+    }
+
+    .profile-tags {
+        justify-content: center;
+    }
+}
+
+        
+        /* =========================================================
+        HERO BACKGROUND CAROUSEL
+        ========================================================= */
+
+        .hero-bg-carousel{
+            position:relative;
+            width:100%;
+            height:100vh;
+            overflow:hidden;
+            font-family:Arial, sans-serif;
+            background:#000;
+        }
+
+        /* =========================================================
+        BACKGROUND SLIDES
+        ========================================================= */
+
+        .bg-slide{
+            position:absolute;
+            inset:0;
+            background-size:cover;
+            background-position:center;
+            
+            opacity:0;
+            visibility:hidden;
+
+            transform:scale(1.15);
+            
+            transition:
+                opacity 1.5s ease,
+                transform 7s ease,
+                visibility 1.5s;
+
+            z-index:1;
+        }
+
+        /* ACTIVE SLIDE */
+
+        .bg-slide.active{
+            opacity:1;
+            visibility:visible;
+            transform:scale(1);
+            z-index:2;
+        }
+
+        /* =========================================================
+        DARK OVERLAY
+        ========================================================= */
+
+        .overlay{
+            position:absolute;
+            inset:0;
+            background:rgba(0,0,0,0.45);
+            z-index:3;
+        }
+
+        /* =========================================================
+        CENTER CONTENT
+        ========================================================= */
+
+        .hero-center{
+            position:relative;
+            z-index:5;
+
+            width:100%;
+            height:100%;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            padding:20px;
+        }
+
+        /* =========================================================
+        GLASS BOX
+        ========================================================= */
+
+        .glass-box{
+            width:65%;
+            max-width:750px;
+
+            padding:45px;
+
+            border-radius:25px;
+
+            text-align:center;
+            color:white;
+
+            background:rgba(255,255,255,0.12);
+
+            backdrop-filter:blur(1px);
+            -webkit-backdrop-filter:blur(15px);
+
+            border:1px solid rgba(255,255,255,0.2);
+
+            animation:floatBox 4s ease-in-out infinite;
+        }
+
+        /* Floating animation */
+
+        @keyframes floatBox{
+            0%{
+                transform:translateY(0px);
+            }
+            50%{
+                transform:translateY(-10px);
+            }
+            100%{
+                transform:translateY(0px);
+            }
+        }
+
+        /* =========================================================
+        TEXT
+        ========================================================= */
+
+        .hero-badge{
+            display:inline-block;
+
+            padding:8px 18px;
+
+            border-radius:50px;
+
+            background:rgba(255,215,0,0.15);
+
+            border:1px solid #FFD700;
+
+            margin-bottom:18px;
+
+            font-size:14px;
+            font-weight:600;
+
+            animation:fadeUp 1s ease;
+        }
+
+        .glass-box h1{
+            font-size:58px;
+            margin-bottom:18px;
+
+            animation:fadeUp 1.2s ease;
+        }
+
+        .glass-box h1 span{
+            color:#FFD700;
+        }
+
+        .glass-box p{
+            font-size:17px;
+            line-height:1.7;
+            opacity:0.9;
+
+            animation:fadeUp 1.4s ease;
+        }
+
+       
+
+        /* =========================================================
+        FADE UP ANIMATION
+        ========================================================= */
+
+        @keyframes fadeUp{
+            from{
+                opacity:0;
+                transform:translateY(30px);
+            }
+
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+
+        /* =========================================================
+        CAROUSEL BUTTONS
+        ========================================================= */
+
+        .carousel-btn{
+            position:absolute;
+            top:50%;
+            transform:translateY(-50%);
+
+            width:55px;
+            height:55px;
+
+            border:none;
+            border-radius:50%;
+
+            background:rgba(255,255,255,0.15);
+
+            backdrop-filter:blur(1px);
+
+            color:white;
+
+            font-size:28px;
+            cursor:pointer;
+
+            z-index:10;
+
+            transition:0.3s ease;
+        }
+
+        /* Hover effect */
+
+        .carousel-btn:hover{
+            background:#FFD700;
+            color:#800000;
+
+            transform:translateY(-50%) scale(1.1);
+        }
+
+        /* Left Button */
+
+        .prev-btn{
+            left:30px;
+        }
+
+        /* Right Button */
+
+        .next-btn{
+            right:30px;
+        }
+
+        /* =========================================================
+        RESPONSIVE
+        ========================================================= */
+
+        @media(max-width:768px){
+
+            .glass-box{
+                width:95%;
+                padding:30px 20px;
+            }
+
+            .glass-box h1{
+                font-size:38px;
+            }
+
+            .glass-box p{
+                font-size:15px;
+            }
+
+            .carousel-btn{
+                width:45px;
+                height:45px;
+                font-size:22px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="/all pictures/logo.png" alt="PUP Logo">
+            <img src="/all pictures/bsbaj.png" alt="BSBA Logo">
+        </div>
+        <div class="header-text">
+            <h1>BS Business Administration major in Marketing Management</h1>
+            <p>Level III - Accreditation | LOPEZ CAMPUS</p>
+        </div>
+    </header>
+
+    <nav>
+        <!-- Hamburger Menu Button -->
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+
+            <li><a href="index.html" class="active">Home</a></li>
+
+            <!-- Dropdown 1 -->
+            <li class="dropdown">
+
+                <button class="dropbtn">
+                    Area
+                    <span class="arrow">▼</span>
+                </button>
+
+                <div class="dropdown-content">
+                    <a href="area1.html">Area 1</a>
+                    <a href="area2.html">Area 2</a>
+                    <a href="area3.html">Area 3</a>
+                    <a href="area4.html">Area 4</a>
+                    <a href="area5.html">Area 5</a>
+                    <a href="area6.html">Area 6</a>
+                    <a href="area7.html">Area 7</a>
+                    <a href="area8.html">Area 8</a>
+                    <a href="area9.html">Area 9</a>
+                    <a href="area10.html">Area 10</a>
+                </div>
+
+            </li>
+
+            <li><a href="faculty.html">Faculty</a></li>
+
+            <!-- Dropdown 2 -->
+            <li class="dropdown">
+
+                <button class="dropbtn">
+                    JME
+                    <span class="arrow">▼</span>
+                </button>
+
+                <div class="dropdown-content">
+                    <a href="documentation.html">Activities and Participation</a>
+                    <a href="outreach.html">Extension Program</a>
+                    <a href="documentation.html">Outreach Program</a>
+                    <a href="outreach.html">Organizational Officer</a>
+                </div>
+
+            </li>
+
+        </ul>
+    </nav>
+
+    <section class="hero-bg-carousel">
+        <!-- BACKGROUND IMAGES -->
+        <div class="bg-slide active"
+            style="background-image:url('PICS/img1.jpeg')">
+        </div>
+        <div class="bg-slide"
+            style="background-image:url('PICS/img2.jpeg')">
+        </div>
+        <div class="bg-slide"
+            style="background-image:url('PICS/img3.jpeg')">
+        </div>
+        <!-- DARK OVERLAY -->
+        <div class="overlay"></div>
+        <!-- CONTENT -->
+        <div class="hero-center">
+            <div class="glass-box">
+                <div class="hero-badge">
+                    🏆 AACCUP Level III
+                </div>
+                <h1>
+                    Excellence in <span>Marketing</span>
+                </h1>
+                <p>
+                    Empowering the next generation of marketing leaders
+                    through rigorous academic standards and
+                    industry-driven accreditation.
+                </p>
+            </div>
+        </div>
+        <!-- BUTTONS -->
+        <button class="carousel-btn prev-btn" onclick="prevSlide()">
+            ❮
+        </button>
+        <button class="carousel-btn next-btn" onclick="nextSlide()">
+            ❯
+        </button>
+    </section>
+    
+   <section class="relative overflow-hidden py-24">
+
+    <!-- Background Effects -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-grid"></div>
+
+    <div class="max-w-7xl mx-auto px-6 space-y-28">
+
+        <!-- FIRST ROW -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+
+            <!-- LEFT CONTENT -->
+            <div class="adviser-content reveal-left">
+
+                <span class="section-badge">
+                    Message from the Adviser
+                </span>
+
+                <h2 class="section-title">
+                    Empowering Future Marketing Leaders Through
+                    Academic Excellence
+                </h2>
+
+                <p class="section-text">
+                    Our mission is to develop innovative, ethical, and globally competitive
+                    marketing professionals through industry-driven education, research,
+                    and leadership. We aim to inspire students to become future-ready
+                    professionals capable of making meaningful contributions to society.
+                </p>
+
+            </div>
+
+            <!-- RIGHT PROFILE -->
+            <div class="profile-card reveal-right">
+
+                <div class="profile-glow"></div>
+
+                <img src="all pictures/sarah.jpg"
+                    alt="Adviser"
+                    class="profile-image">
+
+                <div class="space-y-3">
+                    <h3 class="text-3xl font-bold text-maroon">
+                        Ms. Sarah G. Tabien, MBA
+                    </h3>
+
+                    <p class="text-red tracking-wide">
+                        Program Adviser & Accreditation Lead
+                    </p>
+
+                    <div class="flex flex-wrap justify-center gap-3 pt-2">
+                        <span class="profile-tag">
+                            BSBA-MM Department
+                        </span>
+
+                        <span class="profile-tag">
+                            AACCUP Accredited
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- SECOND ROW -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+
+            <!-- LEFT PROFILE -->
+            <div class="profile-card reveal-left lg:order-1 order-2">
+
+                <div class="profile-glow"></div>
+
+                <img src="all pictures/bulfa.jpg"
+                    alt="Adviser"
+                    class="profile-image">
+
+                <div class="space-y-3">
+                    <h3 class="text-3xl font-bold text-maroon">
+                        Mr. Reidel Sam P. Bulfa, MBA
+                    </h3>
+
+                    <p class="text-red tracking-wide">
+                        Program Adviser & Accreditation Lead
+                    </p>
+
+                    <div class="flex flex-wrap justify-center gap-3 pt-2">
+                        <span class="profile-tag">
+                            Academic Excellence
+                        </span>
+
+                        <span class="profile-tag">
+                            Student Leadership
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT CONTENT -->
+            <div class="adviser-content text-right reveal-right lg:order-2 order-1">
+
+                <span class="section-badge">
+                    Message from the Adviser
+                </span>
+
+                <h2 class="section-title">
+                    Building Globally Competitive Students
+                    Through Innovation & Leadership
+                </h2>
+
+                <p class="section-text ml-auto">
+                    We continuously strengthen our curriculum, student engagement,
+                    and institutional excellence to provide meaningful learning
+                    experiences aligned with current industry standards and global
+                    academic expectations.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About PUP Lopez</h3>
+                <p>Developing world-class professionals equipped with the skills and ethics to excel in the global industry.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>📍 Lopez Branch, Quezon Province</p>
+                <p>📧 lopez@pup.edu.ph</p>
+                <p>📞 (042) 302-7105</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Polytechnic University of the Philippines - Lopez Branch. Built for Accreditation Level III.</p>
+        </div>
+    </footer>
+
+    <script>
+
+        const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+    });
+
+    // MOBILE DROPDOWN
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    dropdowns.forEach(dropdown => {
+
+        const button = dropdown.querySelector('.dropbtn');
+
+        button.addEventListener('click', (e) => {
+
+            // ONLY MOBILE
+            if(window.innerWidth <= 992){
+
+                e.preventDefault();
+
+                dropdown.classList.toggle('mobile-open');
+
+            }
+
+        });
+
+    });
+
+    const slides = document.querySelectorAll(".bg-slide");
+
+    let currentSlide = 0;
+
+    /* SHOW SLIDE */
+
+    function showSlide(index){
+
+        slides.forEach(slide=>{
+            slide.classList.remove("active");
+        });
+
+        slides[index].classList.add("active");
+    }
+
+    /* NEXT */
+
+    function nextSlide(){
+
+        currentSlide++;
+
+        if(currentSlide >= slides.length){
+            currentSlide = 0;
+        }
+
+        showSlide(currentSlide);
+    }
+
+    /* PREVIOUS */
+
+    function prevSlide(){
+
+        currentSlide--;
+
+        if(currentSlide < 0){
+            currentSlide = slides.length - 1;
+        }
+
+        showSlide(currentSlide);
+    }
+
+    /* AUTO LOOP */
+
+    setInterval(()=>{
+        nextSlide();
+    },5000);
+
+    const reveals = document.querySelectorAll('.reveal-left, .reveal-right');
+
+    function revealOnScroll() {
+        reveals.forEach((element) => {
+            const windowHeight = window.innerHeight;
+            const revealTop = element.getBoundingClientRect().top;
+
+            if (revealTop < windowHeight - 100) {
+                element.classList.add('reveal-active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+    </script>
+    
+</body>
+</html>

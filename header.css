@@ -1,0 +1,415 @@
+:root {
+
+    /* Official PUP Colors */
+    --pup-maroon: #800000;
+    --pup-maroon-dark: #5a0000;
+
+    --pup-gold: #FFD700;
+    --pup-gold-dark: #d4af37;
+
+    --white: #ffffff;
+
+    --text-dark: #2d3436;
+
+    --text-muted: #4b5563;
+
+    /* Shadows */
+    --shadow-sm: 0 5px 15px rgba(0,0,0,0.08);
+
+    --shadow-md: 0 10px 30px rgba(0,0,0,0.12);
+
+    --shadow-lg: 0 20px 60px rgba(0,0,0,0.20);
+
+    /* Glow */
+    --gold-glow: rgba(255, 215, 0, 0.20);
+
+    --maroon-glow: rgba(128, 0, 0, 0.18);
+
+    /* Radius */
+    --radius-sm: 12px;
+
+    --radius-md: 20px;
+
+    --radius-lg: 28px;
+
+    --radius-xl: 40px;
+
+    --radius-pill: 999px;
+
+    /* Blur */
+    --blur-sm: blur(10px);
+
+    --blur-md: blur(18px);
+
+    --blur-lg: blur(60px);
+
+    /* Container */
+    --container-width: 1200px;
+
+    /* Transition */
+    --transition-fast: all 0.2s ease;
+
+    --transition-smooth: all 0.35s ease;
+
+    --transition-slow: all 0.5s ease;
+
+    /* Gradients */
+    --gradient-maroon:
+        linear-gradient(
+            135deg,
+            var(--pup-maroon),
+            var(--pup-maroon-dark)
+        );
+
+    --gradient-gold:
+        linear-gradient(
+            135deg,
+            var(--pup-gold),
+            var(--pup-gold-dark)
+        );
+
+    /* Glass */
+    --glass-bg: rgba(255,255,255,0.06);
+
+    --glass-border: rgba(255,255,255,0.12);
+}
+
+
+/* =========================================
+   GLOBAL
+========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- HEADER & BRANDING --- */
+header {
+    background-color: var(--pup-maroon); 
+    color: var(--pup-gold);
+    padding: 1rem 5%; 
+    display: flex;
+    align-items: center;
+    border-bottom: 4px solid var(--pup-gold);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    position: relative;
+    z-index: 10;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-right: 25px;
+}
+
+.logo-container img {
+    height: 65px; 
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+}
+
+.header-text h1 {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+    letter-spacing: 0.5px;
+}
+
+.header-text p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #f1f1f1;
+}
+
+/* ===================================== */
+/* RESPONSIVE PROFESSIONAL NAVIGATION */
+/* ===================================== */
+
+nav {
+    background: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    padding: 0 5%;
+}
+
+/* NAV LINKS */
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* NAV ITEMS */
+.nav-links li {
+    position: relative;
+}
+
+/* LINKS + BUTTON */
+.nav-links a,
+.dropbtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color: var(--pup-maroon);
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+}
+
+/* HOVER EFFECT */
+.nav-links a:hover,
+.dropdown:hover .dropbtn,
+.nav-links a.active {
+    background-color: var(--pup-maroon);
+    color: var(--pup-gold);
+}
+
+/* DROPDOWN */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--white);
+    min-width: 250px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    border-top: 4px solid var(--pup-gold);
+    top: 100%;
+    left: 0;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+    animation: fadeIn 0.3s ease;
+}
+
+/* DROPDOWN LINKS */
+.dropdown-content a {
+    color: var(--text-dark);
+    padding: 14px 20px;
+    font-weight: 500;
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+
+/* DROPDOWN HOVER */
+.dropdown-content a:hover {
+    background-color: #f7f7f7;
+    color: var(--pup-maroon);
+    padding-left: 28px;
+}
+
+/* DESKTOP DROPDOWN */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* ===================================== */
+/* HAMBURGER MENU */
+/* ===================================== */
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    padding: 10px;
+}
+
+.menu-toggle span {
+    width: 28px;
+    height: 3px;
+    background: var(--pup-maroon);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* ANIMATION */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(12px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-12px);
+}
+
+/* ===================================== */
+/* TABLET RESPONSIVE */
+/* ===================================== */
+
+@media (max-width: 992px) {
+
+    nav {
+        justify-content: space-between;
+        padding: 0.8rem 5%;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        overflow: hidden;
+
+        max-height: 0;
+        transition: max-height 0.4s ease;
+
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .nav-links.active {
+        max-height: 1000px;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a,
+    .dropbtn {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        justify-content: space-between;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* MOBILE DROPDOWN */
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        display: none;
+        box-shadow: none;
+        border-top: none;
+        background: #fafafa;
+        border-radius: 0;
+    }
+
+    .dropdown.mobile-open .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content a {
+        padding-left: 2.5rem;
+    }
+
+    /* DISABLE DESKTOP HOVER */
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
+
+    .dropdown.mobile-open:hover .dropdown-content {
+        display: block;
+    }
+
+}
+
+/* ===================================== */
+/* SMALL PHONE */
+/* ===================================== */
+
+@media (max-width: 576px) {
+
+    .nav-links a,
+    .dropbtn {
+        font-size: 0.9rem;
+        padding: 0.95rem 1.2rem;
+    }
+
+    .dropdown-content a {
+        font-size: 0.88rem;
+    }
+
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--pup-maroon-dark); 
+    color: var(--white);
+    padding: 3rem 5% 1.5rem;
+    border-top: 5px solid var(--pup-gold);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-section h3 {
+    color: var(--pup-gold);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.footer-section p, .footer-section li {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    list-style: none;
+    opacity: 0.85;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .hero-text-content h2 { font-size: 2.8rem; }
+  .hero-text-content p { font-size: 1.15rem; }
+  .hero-profile-image { width: 260px; height: 260px; } 
+  header { flex-direction: column; text-align: center; padding: 1rem; }
+  .logo-container { margin: 0 0 10px 0; justify-content: center; }
+  .nav-links { flex-direction: column; width: 100%; }
+  .nav-links a, .dropbtn { text-align: center; width: 100%; padding: 0.8rem; }
+}
